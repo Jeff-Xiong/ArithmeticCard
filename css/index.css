@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#configBtn {
+    font-size: 2rem;
+    color: #555;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+#mainContext {
+    position: absolute;
+    top: 50%;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: -6rem;
+    height: 10rem;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 4.75rem;
+    box-shadow: 5px 5px 15px rgba(146, 144, 144, 0.521);
+    line-height: 10rem;
+}
+
+#ansBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6rem;
+    height: 3.708rem;
+    margin-left: -3rem;
+    margin-top: 5rem;
+    font-size: 1rem;
+}
+
+#tips {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 4px;
+    font-size: 0.75rem;
+    color: gray;
+}
