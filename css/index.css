@@ -11,13 +11,22 @@
     left: 1rem;
 }
 
+#history {
+    position: absolute;
+    top: 3.5rem;
+    /*  border: 1px solid black; */
+    width: 90%;
+    margin-left: 5%;
+    overflow: auto;
+}
+
 #mainContext {
     position: absolute;
-    top: 50%;
+    top: 40%;
     width: 90%;
     margin-left: 5%;
     margin-top: -6rem;
-    height: 10rem;
+    height: 10.4rem;
     border: 1px solid black;
     text-align: center;
     font-size: 4.75rem;
@@ -25,22 +34,135 @@
     line-height: 10rem;
 }
 
+#mainContext span {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
 #ansBtn {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     width: 6rem;
-    height: 3.708rem;
-    margin-left: -3rem;
+    height: 3rem;
+    margin-left: -6rem;
     margin-top: 5rem;
     font-size: 1rem;
 }
 
-#tips {
+#nextBtn {
     position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 6rem;
+    height: 3rem;
+    margin-left: 0rem;
+    margin-top: 5rem;
+    font-size: 1rem;
+}
+
+#keys {
+    position: absolute;
+    top: 40%;
     width: 100%;
+    margin-top: 9rem;
+}
+
+#topicNo {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    margin-top: 22rem;
+}
+
+#timeConsume {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    margin-top: 22rem;
+}
+
+#keys table {
+    width: 90%;
+    margin: auto;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+
+#keys table td {
     text-align: center;
-    bottom: 4px;
-    font-size: 0.75rem;
-    color: gray;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#configDiv {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: whitesmoke;
+}
+
+#configClose {
+    font-size: 2rem;
+    color: #555;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#configCertre {
+    position: absolute;
+    text-align: center;
+    font-size: 1.2rem;
+    top: 10%;
+    width: 100%;
+    line-height: 3rem;
+}
+
+#configCertre input {
+    vertical-align: middle;
+    height: 1.5rem;
+}
+
+fieldset {
+    margin: 2rem;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+fieldset table {
+    width: 100%;
+}
+
+legend {
+    text-align: left;
+    margin-left: 1.5rem;
+}
+
+#startBtn {
+    font-size: 1rem;
+    width: 4rem;
+    height: 2.5rem;
+}
+
+#minnum,
+#maxnum,
+#topicCnt {
+    width: 10rem;
+}
+
+#times {
+    width: 7.2rem;
+}
+
+#timesUnit {
+    width: 2.8rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
 }

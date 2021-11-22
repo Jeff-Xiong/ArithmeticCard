@@ -15,10 +15,83 @@
 </head>
 
 <body>
-    <span id="configBtn" class="iconfont icon-peizhiip"></span>
+    <div id="history"></div>
     <div id="mainContext"></div>
-    <button id="ansBtn">显示答案</button>
-    <div id="tips">点击卡片出下一题</div>
+    <button id="ansBtn">显示答案</button><button id="nextBtn">下一题</button>
+    <div id="keys">
+        <table>
+            <tr>
+                <td width="33.333%" data-val="7">7</td>
+                <td width="33.333%" data-val="8">8</td>
+                <td width="33.333%" data-val="9">9</td>
+            </tr>
+            <tr>
+                <td data-val="4">4</td>
+                <td data-val="5">5</td>
+                <td data-val="6">6</td>
+            </tr>
+            <tr>
+                <td data-val="1">1</td>
+                <td data-val="2">2</td>
+                <td data-val="3">3</td>
+            </tr>
+            <tr>
+                <td data-val="cls">清除</td>
+                <td data-val="0">0</td>
+                <td data-val="bks">←</td>
+            </tr>
+        </table>
+    </div>
+    <div id="topicNo"></div>
+    <div id="timeConsume"><span id="timeCnt"></span><span id="timeMax"></span></div>
+
+    <span id="configBtn" class="iconfont icon-menu"></span>
+    <div id="configDiv">
+        <span id="configClose" class="iconfont icon-close"></span>
+        <div id="configCertre">
+            <fieldset>
+                <legend>配置</legend>
+                <table>
+                    <tr>
+                        <td align="right" width="35%"><label for="minnum">最小值：</label></td>
+                        <td align="left"><input id="minnum" type="number" value="0" min="0" step="1" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label for="maxnum">最大值：</label></td>
+                        <td align="left"><input id="maxnum" type="number" value="10" min="0" step="1" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input id="addition" type="checkbox" /><label
+                                for="addition">加法</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input id="subtraction" type="checkbox" /><label for="subtraction">减法</label>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>测试</legend>
+                <table>
+                    <tr>
+                        <td align="right" width="35%"><label>时&emsp;间：</label></td>
+                        <td align="left"><input id="times" type="number" value="0" min="0" /><select id="timesUnit">
+                                <option value="s">秒</option>
+                                <option value="m">分</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label>题目数：</label></td>
+                        <td align="left"><input id="topicCnt" type="number" value="0" min="0" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button id="startBtn">开始</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </div>
 </body>
 
 </html>
