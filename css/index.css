@@ -22,7 +22,7 @@
 
 #mainContext {
     position: absolute;
-    top: 40%;
+    top: 35%;
     width: 90%;
     margin-left: 5%;
     margin-top: -6rem;
@@ -41,7 +41,7 @@
 
 #ansBtn {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     width: 6rem;
     height: 3rem;
@@ -52,7 +52,7 @@
 
 #nextBtn {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     width: 6rem;
     height: 3rem;
@@ -63,21 +63,21 @@
 
 #keys {
     position: absolute;
-    top: 40%;
+    top: 35%;
     width: 100%;
     margin-top: 9rem;
 }
 
 #topicNo {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 5%;
     margin-top: 22rem;
 }
 
 #timeConsume {
     position: absolute;
-    top: 40%;
+    top: 35%;
     right: 5%;
     margin-top: 22rem;
 }
@@ -120,9 +120,9 @@
     position: absolute;
     text-align: center;
     font-size: 1.2rem;
-    top: 10%;
+    top: 3rem;
     width: 100%;
-    line-height: 3rem;
+    line-height: 2.5rem;
 }
 
 #configCertre input {
@@ -131,7 +131,7 @@
 }
 
 fieldset {
-    margin: 2rem;
+    margin: 5%;
     border-radius: 5px;
     background-color: whitesmoke;
 }

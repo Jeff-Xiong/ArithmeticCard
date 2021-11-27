@@ -19,15 +19,15 @@ function Config() {
     /**
      * 保存配置信息
      */
-    this.saveConfig = function () {
+    this.saveConfig = function() {
         localStorage.setItem('config', JSON.stringify(config));
     }
 
-    this.get = function (key) {
+    this.get = function(key) {
         return config[key];
     }
 
-    this.set = function (key, val) {
+    this.set = function(key, val) {
         config[key] = val;
     }
 
@@ -39,7 +39,7 @@ function Config() {
             if ($.isPlainObject(cfg)) {
                 $.extend(true, config, cfg);
             }
-        } catch (error) { }
+        } catch (error) {}
     }
 
 }
@@ -61,9 +61,10 @@ function MathTool() {
     /**
      * 出加法题
      */
-    function askAddQuestions(min, max) {
-        var add1 = getRndInteger(min, max);
-        var add2 = getRndInteger(min, max);
+    function askAddQuestions(sumMin, sumMax) {
+        var sum = getRndInteger(sumMin, sumMax);
+        var add1 = getRndInteger(0, sum);
+        var add2 = sum - add1;
         return {
             surface: add1 + '+' + add2,
             answer: add1 + add2
@@ -73,20 +74,14 @@ function MathTool() {
     /**
      * 出减法题
      */
-    function askSubsQuestions(min, max) {
-        var add1 = getRndInteger(min, max);
-        var add2 = getRndInteger(min, max);
-        if (add1 >= add2) {
-            return {
-                surface: add1 + '-' + add2,
-                answer: add1 - add2
-            }
-        } else {
-            return {
-                surface: add2 + '-' + add1,
-                answer: add2 - add1
-            }
+    function askSubsQuestions(minusMin, minusMax) {
+        var minus1 = getRndInteger(minusMin, minusMax);
+        var minus2 = getRndInteger(0, minus1);
+        return {
+            surface: minus1 + '-' + minus2,
+            answer: minus1 - minus2
         }
+
     }
 
     /**
@@ -124,7 +119,7 @@ function MathTool() {
 }
 
 
-$(function () {
+$(function() {
 
     var isTest = false; //是否在测试
     var isTestNext = false; //是否时测试完成后
@@ -135,7 +130,7 @@ $(function () {
     var MT = MathTool();
 
     // 一些初始操作
-    (function () {
+    (function() {
         // 调整histroy高度
         var mainCtx = $('#mainContext');
         var history = $('#history');
@@ -160,7 +155,8 @@ $(function () {
      * @param {Number} max 
      */
     function showQuestion() {
-        var min = config.get('min'), max = config.get('max');
+        var min = config.get('min'),
+            max = config.get('max');
         min = parseInt(min);
         max = parseInt(max);
         if (min > max) {
@@ -200,7 +196,7 @@ $(function () {
         }
     }
 
-    $('#keys td').on('click', function () {
+    $('#keys td').on('click', function() {
         var btn = $(this);
         var val = btn.data('val');
         var context = $('#mainContext');
@@ -247,20 +243,20 @@ $(function () {
     }
 
     // 键盘按下变色
-    $('#keys td').on('touchstart', function () {
+    $('#keys td').on('touchstart', function() {
         var btn = $(this);
         btn.css('background-color', 'khaki');
-    }).on('touchend', function () {
+    }).on('touchend', function() {
         var btn = $(this);
         btn.css('background-color', 'transparent');
     });
 
     // 下一题按钮
-    $('#nextBtn').on('click', function () {
+    $('#nextBtn').on('click', function() {
         showQuestion();
     });
     // 显示答案按钮
-    $('#ansBtn').on('click', function () {
+    $('#ansBtn').on('click', function() {
         var context = $('#mainContext');
         var que = context.data('question');
         if (que) {
@@ -269,16 +265,16 @@ $(function () {
     });
 
     // 显示配置界面
-    $('#configBtn').on('click', function () {
+    $('#configBtn').on('click', function() {
         $('#configDiv').show();
     });
     // 关闭配置界面
-    $('#configClose').on('click', function () {
+    $('#configClose').on('click', function() {
         $('#configDiv').hide();
     });
 
     // 开始测试按钮
-    $('#startBtn').on('click', function () {
+    $('#startBtn').on('click', function() {
         var times = $('#times');
         var timesUnit = $('#timesUnit');
         var topicCnt = $('#topicCnt');
@@ -339,7 +335,7 @@ $(function () {
             $('#timeMax').hide();
         }
         clearInterval(testInterval);
-        testInterval = setInterval(function () {
+        testInterval = setInterval(function() {
             $('#timeCnt').html(MT.formatMsecTime(Date.now() - testTime));
             if (timesVal) {
                 if ((Date.now() - testTime) >= timesVal * 1000) {
